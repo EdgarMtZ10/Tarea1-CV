@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Online - Edgar Martínez</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="encabezado">
+    <h1>Edgar Martínez Vásquez</h1>
+    <ul class="datos">
+      <li>Correo: <a href="mailto:em9599104@gmail.com">em9599104@gmail.com</a></li>
+      <li>Teléfono: <a href="tel:+50664276112">+506 6427 6112</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <a href="index.html" class="volver">← Volver al CV</a>
+
+    <section id="resumen">
+      <h2>Sistema de Ventas y Distribución "Nova Online"</h2>
+      <p>Proyecto I del curso Programación IV. Este proyecto se desarrolló junto a dos otros estudiantes y consistió en el desarrollo de un sistema integrado para la gestión de ventas y distribución, implementando una arquitectura distribuida (Cliente-Servidor) utilizando múltiples lenguajes de programación y bases de datos.</p>
+    </section>
+
+    <section id="tecnologias">
+      <h3>Tecnologías usadas</h3>
+      <table>
+        <thead>
+          <tr><th>Tecnología</th><th>Uso en el proyecto</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Java (Sockets, Threads, JDBC)</td><td>Desarrollo del servidor backend del Almacén. Manejo de concurrencia multihilo, parsing de tramas y conexión a base de datos.</td></tr>
+          <tr><td>C# (.NET WinForms)</td><td>Creación de un "Simulador" o cliente ligero con interfaz gráfica para capturar datos y enviar tramas al servidor.</td></tr>
+          <tr><td>SQL Server (T-SQL)</td><td>Base de datos principal del Almacén, lógica de negocio centralizada mediante Procedimientos Almacenados.</td></tr>
+          <tr><td>Python & MySQL</td><td>Desarrollo de un servidor verificador secundario para procesar validaciones externas.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="funcionamiento">
+      <h3>Cómo funciona</h3>
+      <ol>
+        <li>El usuario interactúa con la interfaz gráfica del simulador en C# para registrar un proveedor, producto o una compra.</li>
+        <li>El simulador recopila los datos ingresados, arma una trama de texto plano estructurada y la envía a través de la red (Sockets TCP/IP) hacia el puerto 5000.</li>
+        <li>El servidor backend en Java recibe la petición y crea un nuevo hilo (<code>ClienteHandler</code>) para procesarla sin bloquear el sistema para otros usuarios.</li>
+        <li>Un parser en Java descompone la trama recibida, extrayendo los datos individuales y ejecutando las validaciones iniciales de las reglas de negocio.</li>
+        <li>Mediante JDBC, Java invoca procedimientos almacenados en SQL Server dentro de una transacción segura (<code>setAutoCommit(false)</code>) asegurando que, si un detalle de compra falla, se realice un <em>rollback</em> para mantener la integridad del inventario.</li>
+        <li>El servidor responde al cliente C# con códigos de estado ("EXITOSO", "DATO INVALIDO") y se genera un registro de auditoría en formato JSON en la bitácora del sistema.</li>
+      </ol>
+    </section>
+
+    <section id="capturas">
+      <h3>Capturas</h3>
+      <figure>
+        <img src="1.png" alt="Interfaz del simulador en C# del menu principal" class="captura">
+        <figcaption>Simulador C# - conectada por Sockets</figcaption>
+        </figure>
+        <figure>
+        <img src="2.png" alt="Interfaz del simulador en C# mostrando la ventana de registro de compra" class="captura">
+        </figure>
+        <figure>
+        <figcaption>Simulador C# - ventana de registro de compra</figcaption>
+        </figure>
+        <figure>
+        <img src="3.png" alt="Interfaz del simulador en C# mostrando la ventana de registro de proveedor" class="captura">
+        <figcaption>Simulador C# - ventana de registro de proveedor</figcaption>
+        </figure>
+        <figure>
+        <img src="4.png" alt="Interfaz del simulador en C# mostrando la ventana de registro de producto" class="captura">
+        <figcaption>Simulador C# - ventana de registro de producto</figcaption>
+        </figure>
+        <figure>
+        <img src="5.png" alt="Interfaz del simulador en C# mostrando la ventana de registro de venta" class="captura">
+        <figcaption>Simulador C# - ventana de registro de venta</figcaption>
+        </figure>
+        <figure>
+        <img src="6.png" alt="Interfaz del simulador en C# mostrando la ventana de registro de compra" class="captura">
+        <figcaption>Simulador C# - ventana de registro de compra</figcaption>  
+        </figure>                           
+    </section>
+
+    <section id="repositorio">  
+      <a href="https://github.com/EdgarMtZ10/ProyectoPrograIV" class="ver-proyecto" target="_blank">Ver código en GitHub</a>
+    </section>
+  </main>
+
+ <footer>
+  <button id="btnContacto" type="button">Formas de contacto ▼</button>
+
+  <div id="listaContacto" class="oculto">
+    <ul>
+      <li><a href="mailto:em9599104@gmail.com">Correo</a></li>
+      <li><a href="mailto:edgarmv10@outlook.com">Correo secundario</a></li>
+    </ul>
+  </div>
+</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

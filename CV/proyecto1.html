@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taller de Autos - Edgar Martínez</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="encabezado">
+    <h1>Edgar Martínez Vásquez</h1>
+    <ul class="datos">
+      <li>Correo: <a href="mailto:em9599104@gmail.com">em9599104@gmail.com</a></li>
+      <li>Teléfono: <a href="tel:+50664276112">+506 6427 6112</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <a href="index.html" class="volver">← Volver al CV</a>
+
+    <section id="resumen">
+      <h2>Taller de Autos</h2>
+      <p>Proyecto final del curso Estructura de Datos, Colegio Universitario de Cartago.</p>
+    </section>
+
+    <section id="tecnologias">
+      <h3>Tecnologías usadas</h3>
+      <table>
+        <thead>
+          <tr><th>Tecnología</th><th>Uso en el proyecto</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Java (Swing)</td><td>Interfaz gráfica (GUI) e interacción con el usuario</td></tr>
+          <tr><td>Listas enlazadas</td><td>Estructuras de datos personalizadas (Clientes, Vehículos, Trabajos, Facturas)</td></tr>
+          <tr><td>Java I/O (FileWriter)</td><td>Generación y exportación de archivos de texto (.txt) para facturas y comprobantes</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="funcionamiento">
+      <h3>Cómo funciona</h3>
+      <ol>
+        <li>El usuario interactúa con una interfaz gráfica para gestionar clientes, vehículos, trabajos y facturación.</li>
+        <li>Los datos se estructuran internamente con listas enlazadas simples personalizadas (<em>ListaClientes</em>, <em>ListaVehiculos</em>, <em>ListaTrabajos</em> y <em>ListaFacturas</em>).</li>
+        <li>Al registrar o consultar un elemento, el sistema recorre secuencialmente los nodos de las listas para realizar validaciones o búsquedas por clave (cédula, placa o código).</li>
+        <li>Para la facturación, se calcula el costo total acumulado de los trabajos con estado "Finalizado" en el vehículo seleccionado, y este pasa a estado "Entregado".</li>
+        <li>Las facturas (y comprobantes de pago si el método es tarjeta) se exportan automáticamente a archivos de texto locales mediante <em>PrintWriter</em> / <em>FileWriter</em>.</li>
+      </ol>
+    </section>
+
+    <section id="capturas">
+      <h3>Capturas</h3>
+      <figure>
+        <img src="captura1.png" alt="Menú principal del sistema de Taller de Autos" class="captura">
+        <figcaption>Menú principal del sistema</figcaption>
+      </figure>
+    </section>
+
+    <section id="repositorio">
+      <a href="https://github.com/EdgarMtZ10/ProyectoFinalEstructuraDatos" class="ver-proyecto" target="_blank">Ver código en GitHub</a>
+    </section>
+  </main>
+
+  <footer>
+  <button id="btnContacto" type="button">Formas de contacto ▼</button>
+
+  <div id="listaContacto" class="oculto">
+    <ul>
+      <li><a href="mailto:em9599104@gmail.com">Correo</a></li>
+      <li><a href="mailto:edgarmv10@outlook.com">Correo secundario</a></li>
+    </ul>
+  </div>
+</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

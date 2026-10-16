@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curriculum Vitae - Edgar Martínez Vásquez</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ENCABEZADO que siempre es visible -->
+  <header class="encabezado">
+    <h1>Curriculum Vitae - Edgar Martínez Vásquez</h1>
+    <ul class="datos">
+      <li>Correo: <a href="mailto:em9599104@gmail.com">em9599104@gmail.com</a></li>
+        <li>Teléfono: <a href="tel:+50664276112">+506 6427 6112</a></li>
+    </ul>
+    <!-- navegación a secciones diferentes partes de la página -->
+    <nav>
+      <a href="#estudios">Estudios</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#lenguajes">Lenguajes de Programación e Idiomas</a>
+      <a href="#proyectos">Proyectos</a>
+    </nav>
+  </header>
+
+  <!--CONTENIDO PRINCIPAL-->
+  <main>
+
+    <section id="perfil">
+      <h2>Perfil</h2>
+      <p>Cartago, Costa Rica</p>
+      <p>Estudiante del Diplomado en Tecnologías de la Información en el Colegio Universitario de Cartago (CUC). Apasionado por el desarrollo de software y la resolución de problemas . 
+        Con una sólida base técnica adquirida a través de proyectos académicos. Además me gusta el aprendizaje continuo y busco adaptarme constantemente a las nuevas tendencias del sector tecnológico.</p>
+    </section>
+
+    <section id="estudios">
+      <h2>Estudios</h2>
+      <p>Bachillerato en Educación Media: Colegio Elias Leiva Quirós (2020)</p>
+      <p>Curso English for Communication en el Colegio Universitario de Cartago (2026)</p>
+      <p>Diplomado en Tecnologías de la Información en el Colegio Universitario de Cartago (2024-Presente)</p>
+    </section>
+
+    <section id="habilidades">
+      <h2>Habilidades</h2>
+      <p>- Comunicación efectiva</p>
+      <p>- Trabajo en equipo</p>
+      <p>- Resolución de problemas</p>
+      <p>- Atención al cliente y trabajo en entornos de alta presión</p>
+    </section>
+
+    <section id="lenguajes">
+      <h2>Lenguajes de Programación e Idiomas</h2>
+      <!-- Lenguajes de programación conocidos -->
+       <h3>Lenguajes de Programación</h3>
+       <ul>
+        <li>Python</li>
+        <li>Java</li>
+        <li>HTML5</li>
+        <li>SQL (Bases de datos)</li>
+      </ul>
+      <!-- Idiomas -->
+      <h3>Idiomas</h3>
+      <ul>
+        <li>Inglés (B2 - Avanzado)</li>
+      </ul>
+    </section>
+
+    <section id="proyectos">
+      <h2>Proyectos</h2>
+
+      <article class="proyecto">
+        <h3>Proyecto Final de Estructura de Datos: "Taller de Autos"</h3>
+         <p>Este proyecto consistió en el desarrollo de un sistema de escritorio para la gestión de un taller automotriz, utilizando una interfaz gráfica en Java y estructuras de datos dinámicas personalizadas.</p>
+        <p>Se implementó una solución donde la interfaz de usuario se construyó con la biblioteca Swing de Java, permitiendo el registro y consulta de clientes, vehículos, trabajos y facturación. La gestión de los datos en memoria se realizó mediante listas enlazadas simples (ListaClientes, ListaVehiculos, ListaTrabajos y ListaFacturas) con nodos personalizados, evitando el uso de colecciones predefinidas para manipular la información de forma secuencial. Adicionalmente, el sistema incorporó la persistencia de datos en archivos locales mediante Java I/O (FileWriter / PrintWriter) para generar e imprimir automáticamente las facturas y comprobantes de pago en archivos de texto (.txt).</p>
+        <a href="proyecto1.html">Ver proyecto</a>
+      </article>
+
+      <article class="proyecto">
+        <h3>Proyecto I de Programación IV: Sistema de Ventas y Distribución "Nova Online".</h3>
+        <p> Este sistema integrado se estructuró en varios componentes conectados mediante sockets, utilizando un Simulador con interfaz gráfica en C# para enviar tramas de datos. El Verificador se desarrolló en el lenguaje Python utilizando un motor de bases de datos MySQL, aplicando cifrado AES para datos sensibles y gestionando bitácoras en segundo plano mediante hilos. Por su parte, el componente de Almacén se programó en Java utilizando procedimientos almacenados en una base de datos SQL Server, e implementando triggers para automatizar el control y la actualización del inventario.</p>
+        <a href="proyecto2.html">Ver proyecto</a>
+      </article>
+    </section>
+
+  </main>
+
+  <footer>
+    <button id="btnContacto" type="button">Formas de contacto ▼</button>
+
+    <div id="listaContacto" class="oculto">
+      <ul>
+  <li><a href="https://mail.google.com/mail/?view=cm&to=em9599104@gmail.com" target="_blank">Correo</a></li>
+  <li><a href="https://outlook.live.com/mail/0/deeplink/compose?to=edgarmv10@outlook.com" target="_blank">Correo secundario</a></li>
+  <li><a href="https://github.com/EdgarMtZ10" target="_blank">GitHub</a></li>
+    </ul>
+     </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
